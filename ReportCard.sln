@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard", "ReportCard\Re
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ReportCard.DataBase", "ReportCard.DataBase\ReportCard.DataBase.sqlproj", "{3B8BD806-6A92-474A-B86F-9878B5259D58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Persistent", "ReportCard.Persistent\ReportCard.Persistent.csproj", "{99C885B5-971C-4241-A082-CB0AE1A904CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{3B8BD806-6A92-474A-B86F-9878B5259D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8BD806-6A92-474A-B86F-9878B5259D58}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B8BD806-6A92-474A-B86F-9878B5259D58}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{99C885B5-971C-4241-A082-CB0AE1A904CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99C885B5-971C-4241-A082-CB0AE1A904CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99C885B5-971C-4241-A082-CB0AE1A904CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99C885B5-971C-4241-A082-CB0AE1A904CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

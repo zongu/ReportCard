@@ -3,6 +3,7 @@
 	建立日期: 2022-01-12
 
 	exec pro_scoreQuery
+		@sujectId = null
 */
 
 CREATE PROCEDURE [dbo].[pro_scoreQuery]
