@@ -26,7 +26,7 @@ namespace ReportCard.Model.SecondProcess
         {
             try
             {
-                Console.Clear();
+                this.console.Clear();
                 var getResult = this.repo.Query();
 
                 if (getResult.exception != null)
@@ -36,34 +36,34 @@ namespace ReportCard.Model.SecondProcess
 
                 if (!getResult.sujects.Any())
                 {
-                    Console.WriteLine("請先新增科目");
-                    Console.Read();
-                    Console.Clear();
+                    this.console.WriteLine("請先新增科目");
+                    this.console.Read();
+                    this.console.Clear();
                     return true;
                 }
 
                 var sujectFormat = getResult.sujects.Select(s => $"{s.f_id}.{s.f_name}");
-                Console.WriteLine(string.Join("\r\n", sujectFormat));
-                Console.Write("更新ID:");
+                this.console.WriteLine(string.Join("\r\n", sujectFormat));
+                this.console.Write("更新ID:");
 
                 int sujectId = -1;
 
                 while (
-                    !int.TryParse(Console.ReadLine(), out sujectId) &&
+                    !int.TryParse(this.console.ReadLine(), out sujectId) &&
                     !getResult.sujects.Any(p => p.f_id == sujectId))
                 {
-                    Console.Clear();
-                    Console.WriteLine(string.Join("\r\n", sujectFormat));
-                    Console.Write("更新ID:");
+                    this.console.Clear();
+                    this.console.WriteLine(string.Join("\r\n", sujectFormat));
+                    this.console.Write("更新ID:");
                 }
 
                 string sujectName = string.Empty;
 
                 while (string.IsNullOrEmpty(sujectName))
                 {
-                    Console.Clear();
-                    Console.Write("更新名稱:");
-                    sujectName = Console.ReadLine();
+                    this.console.Clear();
+                    this.console.Write("更新名稱:");
+                    sujectName = this.console.ReadLine();
                 }
 
                 var updateResult = this.repo.Update(new Suject()
@@ -77,17 +77,17 @@ namespace ReportCard.Model.SecondProcess
                     throw updateResult.exception;
                 }
 
-                Console.Write($"更新成功:{JsonConvert.SerializeObject(updateResult.suject)}");
-                Console.Read();
-                Console.Clear();
+                this.console.Write($"更新成功:{JsonConvert.SerializeObject(updateResult.suject)}");
+                this.console.Read();
+                this.console.Clear();
 
                 return true;
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
 
                 return false;
             }
