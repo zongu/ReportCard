@@ -5,6 +5,7 @@ namespace ReportCard.Applibs
     using System.Linq;
     using System.Reflection;
     using Autofac;
+    using ReportCard.Model;
     using ReportCard.Model.FirstProcess;
     using ReportCard.Model.SecondProcess;
 
@@ -41,6 +42,12 @@ namespace ReportCard.Applibs
             builder.RegisterAssemblyTypes(asm)
                 .Where(t => t.IsAssignableTo<ISecondProcess>())
                 .Keyed<ISecondProcess>(p => (SecondProcessType)Enum.Parse(typeof(SecondProcessType), p.Name.Replace("SecondProcess", string.Empty), true))
+                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
+                .SingleInstance();
+
+            // console wrapper
+            builder.RegisterType<ConcoleWrapper>()
+                .As<IConcoleWrapper>()
                 .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
                 .SingleInstance();
 

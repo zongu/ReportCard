@@ -22,11 +22,14 @@ namespace ReportCard.Model.FirstProcess
     {
         protected IIndex<SecondProcessType, ISecondProcess> processSets;
 
+        private IConcoleWrapper console;
+
         protected SecondProcessType[] legalTypes;
 
-        protected IFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets)
+        protected IFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets, IConcoleWrapper console)
         {
             this.processSets = processSets;
+            this.console = console;
         }
 
         private IEnumerable<string> legalTypesFormat
@@ -49,7 +52,7 @@ namespace ReportCard.Model.FirstProcess
 
                 while (cmd.ToLower() != "exit")
                 {
-                    Console.Clear();
+                    this.console.Clear();
 
                     // 處理第二層業務
                     if (legalTypesFormat.Any(p => p == cmd) &&
@@ -59,19 +62,19 @@ namespace ReportCard.Model.FirstProcess
                         return false;
                     }
 
-                    Console.WriteLine(string.Join("\r\n", legalTypesDisplay));
+                    this.console.WriteLine(string.Join("\r\n", legalTypesDisplay));
 
-                    cmd = Console.ReadLine();
+                    cmd = this.console.ReadLine();
                 }
 
-                Console.Clear();
+                this.console.Clear();
                 return true;
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
 
                 return false;
             }

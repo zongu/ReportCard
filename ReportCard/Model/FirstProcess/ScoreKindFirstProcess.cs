@@ -9,8 +9,8 @@ namespace ReportCard.Model.FirstProcess
     /// </summary>
     public class ScoreKindFirstProcess : IFirstProcess
     {
-        public ScoreKindFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets) 
-            : base(processSets)
+        public ScoreKindFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets, IConcoleWrapper console) 
+            : base(processSets, console)
         {
             this.legalTypes = new SecondProcessType[]
             {

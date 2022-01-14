@@ -14,9 +14,12 @@ namespace ReportCard.Model.SecondProcess
     {
         private ISujectRepository repo;
 
-        public SujectUpdateSecondProcess(ISujectRepository repo)
+        private IConcoleWrapper console;
+
+        public SujectUpdateSecondProcess(ISujectRepository repo, IConcoleWrapper console)
         {
             this.repo = repo;
+            this.console = console;
         }
 
         public bool Execute()

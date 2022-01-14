@@ -74,10 +74,12 @@
   <ItemGroup>
     <Compile Include="Applibs\AutofacConfig.cs" />
     <Compile Include="Applibs\ConfigHelper.cs" />
+    <Compile Include="Model\ConcoleWrapper.cs" />
     <Compile Include="Model\EnumDisplayAttribute.cs" />
     <Compile Include="Model\FirstProcess\IFirstProcess.cs" />
     <Compile Include="Model\FirstProcess\ScoreKindFirstProcess.cs" />
     <Compile Include="Model\FirstProcess\SujectKindFirstProcess.cs" />
+    <Compile Include="Model\IConcoleWrapper.cs" />
     <Compile Include="Model\SecondProcess\ISecondProcess.cs" />
     <Compile Include="Model\SecondProcess\ScoreAddSecondProcess.cs" />
     <Compile Include="Model\SecondProcess\ScoreDeleteSecondProcess.cs" />

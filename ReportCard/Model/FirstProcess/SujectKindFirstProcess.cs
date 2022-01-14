@@ -9,8 +9,8 @@ namespace ReportCard.Model.FirstProcess
     /// </summary>
     public class SujectKindFirstProcess : IFirstProcess
     {
-        public SujectKindFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets) 
-            : base(processSets)
+        public SujectKindFirstProcess(IIndex<SecondProcessType, ISecondProcess> processSets, IConcoleWrapper console) 
+            : base(processSets, console)
         {
             this.legalTypes = new SecondProcessType[]
             {

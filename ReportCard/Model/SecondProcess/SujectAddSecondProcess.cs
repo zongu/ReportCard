@@ -12,9 +12,12 @@ namespace ReportCard.Model.SecondProcess
     {
         private ISujectRepository repo;
 
-        public SujectAddSecondProcess(ISujectRepository repo)
+        private IConcoleWrapper console;
+
+        public SujectAddSecondProcess(ISujectRepository repo, IConcoleWrapper console)
         {
             this.repo = repo;
+            this.console = console;
         }
 
         public bool Execute()
@@ -25,9 +28,9 @@ namespace ReportCard.Model.SecondProcess
 
                 while (string.IsNullOrEmpty(sujectName))
                 {
-                    Console.Clear();
-                    Console.Write("科目名稱:");
-                    sujectName = Console.ReadLine();
+                    this.console.Clear();
+                    this.console.Write("科目名稱:");
+                    sujectName = this.console.ReadLine();
                 }
 
                 var addResult = this.repo.Add(sujectName);
@@ -37,17 +40,17 @@ namespace ReportCard.Model.SecondProcess
                     throw addResult.exception;
                 }
 
-                Console.Write($"新增成功:{JsonConvert.SerializeObject(addResult.suject)}");
-                Console.Read();
-                Console.Clear();
+                this.console.Write($"新增成功:{JsonConvert.SerializeObject(addResult.suject)}");
+                this.console.Read();
+                this.console.Clear();
 
                 return true;
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
 
                 return false;
             }

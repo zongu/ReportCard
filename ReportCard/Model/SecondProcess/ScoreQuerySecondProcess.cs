@@ -1,11 +1,8 @@
 ﻿
 namespace ReportCard.Model.SecondProcess
 {
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+    using System;
+    using System.Linq;
     using ReportCard.Persistent.Repository;
 
     /// <summary>
@@ -17,17 +14,20 @@ using System.Threading.Tasks;
 
         private IScoreRepository scoreRepo;
 
-        public ScoreQuerySecondProcess(ISujectRepository sujectRepo, IScoreRepository scoreRepo)
+        private IConcoleWrapper console;
+
+        public ScoreQuerySecondProcess(ISujectRepository sujectRepo, IScoreRepository scoreRepo, IConcoleWrapper console)
         {
             this.sujectRepo = sujectRepo;
             this.scoreRepo = scoreRepo;
+            this.console = console;
         }
 
         public bool Execute()
         {
             try
             {
-                Console.Clear();
+                this.console.Clear();
                 var getSujectResult = this.sujectRepo.Query();
 
                 if (getSujectResult.exception != null)
@@ -51,17 +51,17 @@ using System.Threading.Tasks;
                     return $"{id}.\t{suject}\t{point}";
                 });
 
-                Console.WriteLine(string.Join("\r\n", displayFormat));
-                Console.Read();
-                Console.Clear();
+                this.console.WriteLine(string.Join("\r\n", displayFormat));
+                this.console.Read();
+                this.console.Clear();
 
                 return true;
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
 
                 return false;
             }

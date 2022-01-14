@@ -12,6 +12,8 @@ namespace ReportCard
     {
         static void Main(string[] args)
         {
+            var console = Applibs.AutofacConfig.Container.Resolve<IConcoleWrapper>();
+
             var legalTypes = new FistProcessType[]
             {
                 FistProcessType.SujectKind,
@@ -29,7 +31,7 @@ namespace ReportCard
 
                 while (cmd.ToLower() != "exit")
                 {
-                    Console.Clear();
+                    console.Clear();
 
                     // 處理第一層業務
                     if (legalTypesFormat.Any(p => p == cmd) &&
@@ -37,27 +39,27 @@ namespace ReportCard
                         !process.Execute())
                     {
 
-                        Console.Clear();
-                        Console.WriteLine("Finished!");
-                        Console.Read();
+                        console.Clear();
+                        console.WriteLine("Finished!");
+                        console.Read();
                     }
 
-                    Console.WriteLine(string.Join("\r\n", legalTypesDisplay));
+                    console.WriteLine(string.Join("\r\n", legalTypesDisplay));
 
-                    cmd = Console.ReadLine();
+                    cmd = console.ReadLine();
                 }
 
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                console.Clear();
+                console.WriteLine(ex.Message);
+                console.Read();
             }
 
-            Console.Clear();
-            Console.WriteLine("Finished!");
-            Console.Read();
+            console.Clear();
+            console.WriteLine("Finished!");
+            console.Read();
         }
     }
 }

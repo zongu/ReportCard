@@ -15,17 +15,20 @@ namespace ReportCard.Model.SecondProcess
 
         private IScoreRepository scoreRepo;
 
-        public ScoreDeleteSecondProcess(ISujectRepository sujectRepo, IScoreRepository scoreRepo)
+        private IConcoleWrapper console;
+
+        public ScoreDeleteSecondProcess(ISujectRepository sujectRepo, IScoreRepository scoreRepo, IConcoleWrapper console)
         {
             this.sujectRepo = sujectRepo;
             this.scoreRepo = scoreRepo;
+            this.console = console;
         }
 
         public bool Execute()
         {
             try
             {
-                Console.Clear();
+                this.console.Clear();
                 var getSujectResult = this.sujectRepo.Query();
 
                 if (getSujectResult.exception != null)
@@ -49,18 +52,18 @@ namespace ReportCard.Model.SecondProcess
                         return $"{id}.\t{suject}\t{point}";
                     });
 
-                Console.WriteLine(string.Join("\r\n", displayFormat));
-                Console.Write("移除ID:");
+                this.console.WriteLine(string.Join("\r\n", displayFormat));
+                this.console.Write("移除ID:");
 
                 int scoreId = -1;
 
                 while (
-                    !int.TryParse(Console.ReadLine(), out scoreId) &&
+                    !int.TryParse(this.console.ReadLine(), out scoreId) &&
                     !getScoreResult.scores.Any(p => p.f_id == scoreId))
                 {
-                    Console.Clear();
-                    Console.WriteLine(string.Join("\r\n", displayFormat));
-                    Console.Write("移除ID:");
+                    this.console.Clear();
+                    this.console.WriteLine(string.Join("\r\n", displayFormat));
+                    this.console.Write("移除ID:");
                 }
 
                 var delResult = this.scoreRepo.Delete(scoreId);
@@ -70,17 +73,17 @@ namespace ReportCard.Model.SecondProcess
                     throw delResult.exception;
                 }
 
-                Console.Write($"移除成功:{JsonConvert.SerializeObject(delResult.score)}");
-                Console.Read();
-                Console.Clear();
+                this.console.Write($"移除成功:{JsonConvert.SerializeObject(delResult.score)}");
+                this.console.Read();
+                this.console.Clear();
 
                 return true;
             }
             catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine(ex.Message);
-                Console.Read();
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
 
                 return false;
             }
