@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Persistent", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Persistent.Tests", "ReportCard.Persistent.Tests\ReportCard.Persistent.Tests.csproj", "{7AC2B4DF-0BE7-4347-9E71-FE341C942C1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Tests", "ReportCard.Tests\ReportCard.Tests.csproj", "{F435C696-8516-4DD3-97DE-6DB0853A6404}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{7AC2B4DF-0BE7-4347-9E71-FE341C942C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC2B4DF-0BE7-4347-9E71-FE341C942C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AC2B4DF-0BE7-4347-9E71-FE341C942C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F435C696-8516-4DD3-97DE-6DB0853A6404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F435C696-8516-4DD3-97DE-6DB0853A6404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F435C696-8516-4DD3-97DE-6DB0853A6404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F435C696-8516-4DD3-97DE-6DB0853A6404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
