@@ -52,9 +52,9 @@ namespace ReportCard.Applibs
                 .SingleInstance();
 
             // sql ioc
-            builder.RegisterAssemblyTypes(Assembly.Load("ReportCard.Persistent"))
+            builder.RegisterAssemblyTypes(Assembly.Load("ReportCard.Persistent"), Assembly.Load("ReportCard.Domain"))
                 .WithParameter("connectionString", ConfigHelper.ConnectionString)
-                .Where(t => t.Namespace == "ReportCard.Persistent.Repository")
+                .Where(t => t.Namespace == "ReportCard.Persistent.Repository" || t.Namespace == "ReportCard.Domain.Repository")
                 .As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == $"I{t.Name}"))
                 .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies)
                 .SingleInstance();
