@@ -7,7 +7,7 @@ namespace ReportCard.Domain.Model
     {
         public int SujectId { get; set; }
 
-        public int point { get; set; }
+        public int Point { get; set; }
 
         public override string ToString()
             => JsonConvert.SerializeObject(this);

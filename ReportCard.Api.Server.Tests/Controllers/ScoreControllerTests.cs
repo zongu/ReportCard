@@ -53,7 +53,7 @@ namespace ReportCard.Api.Server.Tests.Controllers
             var postRsult = controller.Post(new ScoreAddDto()
             {
                 SujectId = 1,
-                point = 80
+                Point = 80
             });
 
             var result = JsonConvert.DeserializeObject<Score>(postRsult.Content.ReadAsStringAsync().Result);

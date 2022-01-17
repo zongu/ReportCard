@@ -1,6 +1,7 @@
 ﻿
 namespace ReportCard.Domain.Model.FirstProcess
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Autofac.Features.Indexed;
@@ -21,7 +22,7 @@ namespace ReportCard.Domain.Model.FirstProcess
     {
         protected IIndex<SecondProcessType, ISecondProcess> processSets;
 
-        protected IConcoleWrapper console;
+        private IConcoleWrapper console;
 
         protected SecondProcessType[] legalTypes;
 
@@ -31,18 +32,52 @@ namespace ReportCard.Domain.Model.FirstProcess
             this.console = console;
         }
 
-        protected IEnumerable<string> legalTypesFormat
+        private IEnumerable<string> legalTypesFormat
         {
             get
                 => legalTypes?.Select(t => $"{((int)t)}") ?? new string[] { };
         }
 
-        protected IEnumerable<string> legalTypesDisplay
+        private IEnumerable<string> legalTypesDisplay
         {
             get
                 => legalTypes?.Select(t => t.ToDisplay()) ?? new string[] { };
         }
 
-        public abstract bool Execute();
+        public bool Execute()
+        {
+            try
+            {
+                string cmd = string.Empty;
+
+                while (cmd.ToLower() != "exit")
+                {
+                    this.console.Clear();
+
+                    // 處理第二層業務
+                    if (legalTypesFormat.Any(p => p == cmd) &&
+                        this.processSets.TryGetValue((SecondProcessType)Convert.ToInt32(cmd), out ISecondProcess process) &&
+                        !process.Execute())
+                    {
+                        return false;
+                    }
+
+                    this.console.WriteLine(string.Join("\r\n", legalTypesDisplay));
+
+                    cmd = this.console.ReadLine();
+                }
+
+                this.console.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.console.Clear();
+                this.console.WriteLine(ex.Message);
+                this.console.Read();
+
+                return false;
+            }
+        }
     }
 }

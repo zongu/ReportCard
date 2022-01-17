@@ -49,7 +49,7 @@ namespace ReportCard.Api.Server.Controllers
         {
             try
             {
-                var addResult = this.repo.Add(input.SujectId, input.point);
+                var addResult = this.repo.Add(input.SujectId, input.Point);
 
                 if (addResult.exception != null)
                 {
