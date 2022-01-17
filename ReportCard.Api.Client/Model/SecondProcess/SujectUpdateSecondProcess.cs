@@ -10,13 +10,13 @@ namespace ReportCard.Api.Client.Model.SecondProcess
 
     public class SujectUpdateSecondProcess : ISecondProcess
     {
-        private ISujectService repo;
+        private ISujectService svc;
 
         private IConcoleWrapper console;
 
-        public SujectUpdateSecondProcess(ISujectService repo, IConcoleWrapper console)
+        public SujectUpdateSecondProcess(ISujectService svc, IConcoleWrapper console)
         {
-            this.repo = repo;
+            this.svc = svc;
             this.console = console;
         }
 
@@ -25,7 +25,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
             try
             {
                 this.console.Clear();
-                var getResult = this.repo.Query();
+                var getResult = this.svc.Query();
 
                 if (getResult.exception != null)
                 {
@@ -64,7 +64,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
                     sujectName = this.console.ReadLine();
                 }
 
-                var updateResult = this.repo.Update(new SujectUpdateDto()
+                var updateResult = this.svc.Update(new SujectUpdateDto()
                 {
                     Id = sujectId,
                     Name = sujectName

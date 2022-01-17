@@ -9,16 +9,16 @@ namespace ReportCard.Api.Client.Model.SecondProcess
 
     public class ScoreQuerySecondProcess : ISecondProcess
     {
-        private ISujectService sujectRepo;
+        private ISujectService sujectSvc;
 
-        private IScoreService scoreRepo;
+        private IScoreService scoreSvc;
 
         private IConcoleWrapper console;
 
-        public ScoreQuerySecondProcess(ISujectService sujectRepo, IScoreService scoreRepo, IConcoleWrapper console)
+        public ScoreQuerySecondProcess(ISujectService sujectSvc, IScoreService scoreSvc, IConcoleWrapper console)
         {
-            this.sujectRepo = sujectRepo;
-            this.scoreRepo = scoreRepo;
+            this.sujectSvc = sujectSvc;
+            this.scoreSvc = scoreSvc;
             this.console = console;
         }
 
@@ -27,14 +27,14 @@ namespace ReportCard.Api.Client.Model.SecondProcess
             try
             {
                 this.console.Clear();
-                var getSujectResult = this.sujectRepo.Query();
+                var getSujectResult = this.sujectSvc.Query();
 
                 if (getSujectResult.exception != null)
                 {
                     throw getSujectResult.exception;
                 }
 
-                var getScoreResult = this.scoreRepo.Query(null);
+                var getScoreResult = this.scoreSvc.Query(null);
 
                 if (getScoreResult.exception != null)
                 {

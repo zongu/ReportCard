@@ -9,13 +9,13 @@ namespace ReportCard.Api.Client.Model.SecondProcess
 
     public class SujectAddSecondProcess : ISecondProcess
     {
-        private ISujectService repo;
+        private ISujectService svc;
 
         private IConcoleWrapper console;
 
-        public SujectAddSecondProcess(ISujectService repo, IConcoleWrapper console)
+        public SujectAddSecondProcess(ISujectService svc, IConcoleWrapper console)
         {
-            this.repo = repo;
+            this.svc = svc;
             this.console = console;
         }
 
@@ -32,7 +32,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
                     sujectName = this.console.ReadLine();
                 }
 
-                var addResult = this.repo.Add(sujectName);
+                var addResult = this.svc.Add(sujectName);
 
                 if (addResult.exception != null)
                 {

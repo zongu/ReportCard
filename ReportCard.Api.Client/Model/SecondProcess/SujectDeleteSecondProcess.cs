@@ -10,13 +10,13 @@ namespace ReportCard.Api.Client.Model.SecondProcess
 
     public class SujectDeleteSecondProcess : ISecondProcess
     {
-        private ISujectService repo;
+        private ISujectService svc;
 
         private IConcoleWrapper console;
 
-        public SujectDeleteSecondProcess(ISujectService repo, IConcoleWrapper console)
+        public SujectDeleteSecondProcess(ISujectService svc, IConcoleWrapper console)
         {
-            this.repo = repo;
+            this.svc = svc;
             this.console = console;
         }
 
@@ -25,7 +25,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
             try
             {
                 this.console.Clear();
-                var getResult = this.repo.Query();
+                var getResult = this.svc.Query();
 
                 if (getResult.exception != null)
                 {
@@ -55,7 +55,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
                     this.console.Write("移除ID:");
                 }
 
-                var delResult = this.repo.Delete(sujectId);
+                var delResult = this.svc.Delete(sujectId);
 
                 if (delResult.exception != null)
                 {

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Api.Server.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Api.Client", "ReportCard.Api.Client\ReportCard.Api.Client.csproj", "{BCD0CA10-45CF-41AA-AB92-8AAE2B8E2B36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Api.Client.Tests", "ReportCard.Api.Client.Tests\ReportCard.Api.Client.Tests.csproj", "{B1E40E52-4861-4F60-BE7B-91AEE37FFE6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{BCD0CA10-45CF-41AA-AB92-8AAE2B8E2B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCD0CA10-45CF-41AA-AB92-8AAE2B8E2B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCD0CA10-45CF-41AA-AB92-8AAE2B8E2B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E40E52-4861-4F60-BE7B-91AEE37FFE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E40E52-4861-4F60-BE7B-91AEE37FFE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E40E52-4861-4F60-BE7B-91AEE37FFE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E40E52-4861-4F60-BE7B-91AEE37FFE6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

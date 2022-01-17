@@ -10,16 +10,16 @@ namespace ReportCard.Api.Client.Model.SecondProcess
 
     public class ScoreAddSecondProcess : ISecondProcess
     {
-        private ISujectService sujectRepo;
+        private ISujectService sujectSvc;
 
-        private IScoreService scoreRepo;
+        private IScoreService scoreSvc;
 
         private IConcoleWrapper console;
 
-        public ScoreAddSecondProcess(ISujectService sujectRepo, IScoreService scoreRepo, IConcoleWrapper console)
+        public ScoreAddSecondProcess(ISujectService sujectSvc, IScoreService scoreSvc, IConcoleWrapper console)
         {
-            this.sujectRepo = sujectRepo;
-            this.scoreRepo = scoreRepo;
+            this.sujectSvc = sujectSvc;
+            this.scoreSvc = scoreSvc;
             this.console = console;
         }
 
@@ -28,7 +28,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
             try
             {
                 this.console.Clear();
-                var getResult = this.sujectRepo.Query();
+                var getResult = this.sujectSvc.Query();
 
                 if (getResult.exception != null)
                 {
@@ -71,7 +71,7 @@ namespace ReportCard.Api.Client.Model.SecondProcess
                     this.console.Write("分數(0~100):");
                 }
 
-                var addResult = this.scoreRepo.Add(new ScoreAddDto()
+                var addResult = this.scoreSvc.Add(new ScoreAddDto()
                 {
                     SujectId = sujectId,
                     Point = point
