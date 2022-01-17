@@ -82,6 +82,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IScoreRepository.cs" />
     <Compile Include="Repository\ISujectRepository.cs" />
+    <Compile Include="Service\IScoreService.cs" />
+    <Compile Include="Service\ISujectService.cs" />
+    <Compile Include="Service\ScoreService.cs" />
+    <Compile Include="Service\SujectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
