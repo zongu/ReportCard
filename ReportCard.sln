@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Domain", "Report
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Api.Server", "ReportCard.Api.Server\ReportCard.Api.Server.csproj", "{5B11C890-F285-4B24-8968-87FAA6368DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Api.Server.Tests", "ReportCard.Api.Server.Tests\ReportCard.Api.Server.Tests.csproj", "{1291C508-0016-46B6-B730-5742182721B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{5B11C890-F285-4B24-8968-87FAA6368DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B11C890-F285-4B24-8968-87FAA6368DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B11C890-F285-4B24-8968-87FAA6368DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1291C508-0016-46B6-B730-5742182721B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1291C508-0016-46B6-B730-5742182721B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1291C508-0016-46B6-B730-5742182721B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1291C508-0016-46B6-B730-5742182721B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
