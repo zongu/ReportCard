@@ -44,15 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Score.cs" />
-    <Compile Include="Model\Suject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IScoreRepository.cs" />
-    <Compile Include="Repository\ISujectRepository.cs" />
     <Compile Include="Repository\ScoreRepository.cs" />
     <Compile Include="Repository\SujectRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ReportCard.Domain\ReportCard.Domain.csproj">
+      <Project>{436e2536-d24b-47c2-b952-1141bad42912}</Project>
+      <Name>ReportCard.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

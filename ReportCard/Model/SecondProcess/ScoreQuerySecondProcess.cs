@@ -3,7 +3,9 @@ namespace ReportCard.Model.SecondProcess
 {
     using System;
     using System.Linq;
-    using ReportCard.Persistent.Repository;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Model.SecondProcess;
+    using ReportCard.Domain.Repository;
 
     /// <summary>
     /// 查找分數業務

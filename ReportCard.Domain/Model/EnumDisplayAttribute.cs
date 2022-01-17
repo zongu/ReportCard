@@ -1,5 +1,5 @@
 ﻿
-namespace ReportCard.Model
+namespace ReportCard.Domain.Model
 {
     using System;
     using System.Linq;

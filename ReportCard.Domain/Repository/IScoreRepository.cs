@@ -1,9 +1,9 @@
 ﻿
-namespace ReportCard.Persistent.Repository
+namespace ReportCard.Domain.Repository
 {
     using System;
     using System.Collections.Generic;
-    using ReportCard.Persistent.Model;
+    using ReportCard.Domain.Model;
 
     /// <summary>
     /// 分數持久層

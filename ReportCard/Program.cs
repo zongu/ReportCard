@@ -5,8 +5,8 @@ namespace ReportCard
     using System.Linq;
     using Autofac;
     using Autofac.Features.Indexed;
-    using ReportCard.Model;
-    using ReportCard.Model.FirstProcess;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Model.FirstProcess;
 
     class Program
     {

@@ -4,7 +4,9 @@ namespace ReportCard.Model.SecondProcess
     using System;
     using System.Linq;
     using Newtonsoft.Json;
-    using ReportCard.Persistent.Repository;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Model.SecondProcess;
+    using ReportCard.Domain.Repository;
 
     /// <summary>
     /// 刪除科目事務

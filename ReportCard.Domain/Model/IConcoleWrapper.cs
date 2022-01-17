@@ -1,45 +1,38 @@
 ﻿
-namespace ReportCard.Model
+namespace ReportCard.Domain.Model
 {
-    using System;
-
     /// <summary>
     /// console 包
     /// </summary>
-    public class ConcoleWrapper : IConcoleWrapper
+    public interface IConcoleWrapper
     {
         /// <summary>
         /// console clear
         /// </summary>
-        public void Clear()
-            => Console.Clear();
+        void Clear();
 
         /// <summary>
         /// console read
         /// </summary>
         /// <returns></returns>
-        public int Read()
-            => Console.Read();
+        int Read();
 
         /// <summary>
         /// console readLine
         /// </summary>
         /// <returns></returns>
-        public string ReadLine()
-            => Console.ReadLine();
+        string ReadLine();
 
         /// <summary>
         /// console write
         /// </summary>
         /// <param name="str"></param>
-        public void Write(string str)
-            => Console.Write(str);
+        void Write(string str);
 
         /// <summary>
         /// console writeLine
         /// </summary>
         /// <param name="str"></param>
-        public void WriteLine(string str)
-            => Console.WriteLine(str);
+        void WriteLine(string str);
     }
 }

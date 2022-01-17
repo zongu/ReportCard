@@ -1,8 +1,6 @@
 ﻿
-namespace ReportCard.Model.SecondProcess
+namespace ReportCard.Domain.Model.SecondProcess
 {
-    using System;
-
     /// <summary>
     /// 第二層業務
     /// </summary>

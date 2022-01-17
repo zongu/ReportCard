@@ -6,7 +6,8 @@ namespace ReportCard.Persistent.Repository
     using System.Data;
     using System.Data.SqlClient;
     using Dapper;
-    using ReportCard.Persistent.Model;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Repository;
 
     /// <summary>
     /// 科目持久層

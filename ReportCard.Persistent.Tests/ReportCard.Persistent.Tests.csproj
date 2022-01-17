@@ -61,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReportCard.Domain\ReportCard.Domain.csproj">
+      <Project>{436e2536-d24b-47c2-b952-1141bad42912}</Project>
+      <Name>ReportCard.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportCard.Persistent\ReportCard.Persistent.csproj">
       <Project>{99C885B5-971C-4241-A082-CB0AE1A904CC}</Project>
       <Name>ReportCard.Persistent</Name>

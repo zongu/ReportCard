@@ -4,10 +4,9 @@ namespace ReportCard.Tests.Model.SecondProcess
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
-    using ReportCard.Model;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Repository;
     using ReportCard.Model.SecondProcess;
-    using ReportCard.Persistent.Model;
-    using ReportCard.Persistent.Repository;
 
     [TestClass]
     public class ScoreDeleteSecondProcessTests

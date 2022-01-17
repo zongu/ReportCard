@@ -1,5 +1,5 @@
 ﻿
-namespace ReportCard.Persistent.Model
+namespace ReportCard.Domain.Model
 {
     /// <summary>
     /// 科目

@@ -5,9 +5,9 @@ namespace ReportCard.Applibs
     using System.Linq;
     using System.Reflection;
     using Autofac;
-    using ReportCard.Model;
-    using ReportCard.Model.FirstProcess;
-    using ReportCard.Model.SecondProcess;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Model.FirstProcess;
+    using ReportCard.Domain.Model.SecondProcess;
 
     internal static class AutofacConfig
     {

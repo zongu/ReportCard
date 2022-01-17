@@ -3,7 +3,9 @@ namespace ReportCard.Model.SecondProcess
 {
     using System;
     using Newtonsoft.Json;
-    using ReportCard.Persistent.Repository;
+    using ReportCard.Domain.Model;
+    using ReportCard.Domain.Model.SecondProcess;
+    using ReportCard.Domain.Repository;
 
     /// <summary>
     /// 新增科目事務

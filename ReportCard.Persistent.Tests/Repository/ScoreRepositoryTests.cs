@@ -1,11 +1,11 @@
 ﻿
 namespace ReportCard.Persistent.Tests.Repository
 {
-using System;
     using System.Data.SqlClient;
     using System.Linq;
     using Dapper;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ReportCard.Domain.Repository;
     using ReportCard.Persistent.Repository;
 
     [TestClass]
