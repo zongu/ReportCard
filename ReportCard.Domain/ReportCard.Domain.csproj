@@ -77,6 +77,8 @@
     <Compile Include="Model\ScoreAddDto.cs" />
     <Compile Include="Model\SecondProcess\ISecondProcess.cs" />
     <Compile Include="Model\Suject.cs" />
+    <Compile Include="Model\SujectAddDto.cs" />
+    <Compile Include="Model\SujectUpdateDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IScoreRepository.cs" />
     <Compile Include="Repository\ISujectRepository.cs" />

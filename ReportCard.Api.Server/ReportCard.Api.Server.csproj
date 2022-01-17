@@ -119,6 +119,7 @@
     <Compile Include="Applibs\ConfigHelper.cs" />
     <Compile Include="Applibs\ReportCardProcess.cs" />
     <Compile Include="Controllers\ScoreController.cs" />
+    <Compile Include="Controllers\SujectController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
