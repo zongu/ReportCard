@@ -105,6 +105,7 @@
     <Compile Include="ActionHandler\AddScoreActionHandler.cs" />
     <Compile Include="ActionHandler\AddSujectActionHandler.cs" />
     <Compile Include="ActionHandler\DeleteScoreActionHandler.cs" />
+    <Compile Include="ActionHandler\DeleteSujectActionHandler.cs" />
     <Compile Include="ActionHandler\GetScoreActionHandler.cs" />
     <Compile Include="Applibs\AutofacConfig.cs" />
     <Compile Include="Applibs\ConfigHelper.cs" />

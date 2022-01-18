@@ -72,6 +72,7 @@
     <Compile Include="Action\AddScoreAction.cs" />
     <Compile Include="Action\AddSujectAction.cs" />
     <Compile Include="Action\DeleteScoreAction.cs" />
+    <Compile Include="Action\DeleteSujectAction.cs" />
     <Compile Include="Action\GetScoreSequenceAction.cs" />
     <Compile Include="Action\ScoreAction.cs" />
     <Compile Include="Action\ScoreSequenceAction.cs" />
