@@ -65,6 +65,7 @@
     <Compile Include="ActionHandler\AddScoreActionHandlerTests.cs" />
     <Compile Include="ActionHandler\GetScoreActionHandlerTests.cs" />
     <Compile Include="ActionHandler\DeleteScoreActionHandlerTests.cs" />
+    <Compile Include="ActionHandler\AddSujectActionHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
