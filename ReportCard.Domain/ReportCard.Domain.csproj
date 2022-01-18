@@ -79,6 +79,7 @@
     <Compile Include="Action\ScoreSequenceAction.cs" />
     <Compile Include="Action\SujectAction.cs" />
     <Compile Include="Action\SujectSequenceAction.cs" />
+    <Compile Include="Action\UpdateSujectAction.cs" />
     <Compile Include="KeepAliveConn\ActionBase.cs" />
     <Compile Include="KeepAliveConn\ActionModule.cs" />
     <Compile Include="Model\ConcoleWrapper.cs" />
