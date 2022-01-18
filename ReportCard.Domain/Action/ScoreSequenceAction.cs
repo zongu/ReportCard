@@ -1,20 +1,21 @@
 ﻿
 namespace ReportCard.Domain.Action
 {
+    using System.Collections.Generic;
     using ReportCard.Domain.KeepAliveConn;
     using ReportCard.Domain.Model;
 
     /// <summary>
-    /// 會應Score結果
+    /// Score指令
     /// </summary>
-    public class ScoreAction : ActionBase
+    public class ScoreSequenceAction : ActionBase
     {
         public override string Action()
-            => "score";
+            => "scoreSequence";
 
         /// <summary>
-        /// Score
+        /// Score 集合
         /// </summary>
-        public Score Score { get; set; }
+        public IEnumerable<Score> Scores { get; set; }
     }
 }

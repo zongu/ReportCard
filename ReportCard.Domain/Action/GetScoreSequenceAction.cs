@@ -6,10 +6,10 @@ namespace ReportCard.Domain.Action
     /// <summary>
     /// 取得Score指令
     /// </summary>
-    public class GetScoreAction : ActionBase
+    public class GetScoreSequenceAction : ActionBase
     {
         public override string Action()
-            => "getScore";
+            => "getScoreSequence";
 
         /// <summary>
         /// 科目ID

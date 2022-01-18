@@ -8,11 +8,11 @@ namespace ReportCard.Signalr.Server.ActionHandler
     using ReportCard.Domain.Repository;
     using ReportCard.Signalr.Server.Model;
 
-    public class GetScoreActionHandler : IActionHandler
+    public class AddScoreActionHandler : IActionHandler
     {
         private IScoreRepository repo;
 
-        public GetScoreActionHandler(IScoreRepository repo)
+        public AddScoreActionHandler(IScoreRepository repo)
         {
             this.repo = repo;
         }
@@ -21,17 +21,17 @@ namespace ReportCard.Signalr.Server.ActionHandler
         {
             try
             {
-                var content = JsonConvert.DeserializeObject<GetScoreSequenceAction>(action.Message);
-                var getResult = this.repo.Query(content.SujectId);
+                var content = JsonConvert.DeserializeObject<AddScoreAction>(action.Message);
+                var addResult = this.repo.Add(content.SujectId, content.Point);
 
-                if (getResult.exception != null)
+                if (addResult.exception != null)
                 {
-                    throw getResult.exception;
+                    throw addResult.exception;
                 }
 
-                var actionResult = new ScoreSequenceAction()
+                var actionResult = new ScoreAction()
                 {
-                    Scores = getResult.scores
+                    Score = addResult.score
                 };
 
                 return (null, actionResult);

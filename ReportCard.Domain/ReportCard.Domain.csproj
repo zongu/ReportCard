@@ -69,8 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action\GetScoreAction.cs" />
+    <Compile Include="Action\AddScoreAction.cs" />
+    <Compile Include="Action\GetScoreSequenceAction.cs" />
     <Compile Include="Action\ScoreAction.cs" />
+    <Compile Include="Action\ScoreSequenceAction.cs" />
     <Compile Include="KeepAliveConn\ActionBase.cs" />
     <Compile Include="KeepAliveConn\ActionModule.cs" />
     <Compile Include="Model\ConcoleWrapper.cs" />
