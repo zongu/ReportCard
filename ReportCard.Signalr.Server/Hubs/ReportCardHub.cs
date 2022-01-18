@@ -51,18 +51,70 @@ namespace ReportCard.Signalr.Server.Hubs
             return base.OnReconnected();
         }
 
+
         /// <summary>
-        /// 接收RS請求
+        /// 接收請求(同步)
         /// </summary>
-        /// <param name="bytes"></param>
-        public void SendAction(string str)
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string GetAction(string str)
         {
             try
             {
                 var action = ActionModule.FromString(str);
+                var actionResult = this.ExecuteAction(action);
 
+                if (actionResult.exception != null)
+                {
+                    throw actionResult.exception;
+                }
+
+                if (actionResult.action != null)
+                {
+                    return actionResult.action.ToString();
+                }   
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, $"{this.GetType().Name} SendAction Exception");
+            }
+
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// 接收請求
+        /// </summary>
+        /// <param name="str"></param>
+        public void SendAction(string str)
+        {
+            try
+            {
                 logger.Info($"{this.GetType().Name} SendAction Receipt:{str}");
 
+                var action = ActionModule.FromString(str);
+                var actionResult = this.ExecuteAction(action);
+
+                if (actionResult.exception != null)
+                {
+                    throw actionResult.exception;
+                }
+
+                if (actionResult.action != null)
+                {
+                    this.Clients.All.BroadCastAction(actionResult.action.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, $"{this.GetType().Name} SendAction Exception");
+            }
+        }
+
+        private (Exception exception, ActionModule action) ExecuteAction(ActionModule action)
+        {
+            try
+            {
                 using (var scope = AutofacConfig.Container.BeginLifetimeScope())
                 {
                     var handlerSets = scope.Resolve<IIndex<string, IActionHandler>>();
@@ -76,17 +128,21 @@ namespace ReportCard.Signalr.Server.Hubs
                             throw excuteResult.exception;
                         }
 
-                        this.Clients.All.BroadCastAction(new ActionModule()
+                        var actionResult = new ActionModule()
                         {
                             Action = excuteResult.actionBase.Action(),
                             Message = excuteResult.actionBase.ToString()
-                        });
+                        };
+
+                        return (null, actionResult);
                     }
+
+                    return (null, null);
                 }
             }
             catch (Exception ex)
             {
-                logger.Error(ex, $"{this.GetType().Name} ExecuteAction Exception");
+                return (ex, null);
             }
         }
     }
