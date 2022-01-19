@@ -66,13 +66,13 @@
   <ItemGroup>
     <Build Include="dbo\Tables\t_suject.sql" />
     <Build Include="dbo\Tables\t_score.sql" />
-    <Build Include="dbo\User Defined Types\pro_sujectQuery.sql" />
-    <Build Include="dbo\User Defined Types\pro_sujectAdd.sql" />
-    <Build Include="dbo\User Defined Types\pro_sujectUpdate.sql" />
-    <Build Include="dbo\User Defined Types\pro_sujectDelete.sql" />
-    <Build Include="dbo\User Defined Types\pro_scoreQuery.sql" />
-    <Build Include="dbo\User Defined Types\pro_scoreAdd.sql" />
-    <Build Include="dbo\User Defined Types\pro_scoreDelete.sql" />
+    <Build Include="dbo\Stored Procedures\pro_scoreAdd.sql" />
+    <Build Include="dbo\Stored Procedures\pro_scoreDelete.sql" />
+    <Build Include="dbo\Stored Procedures\pro_scoreQuery.sql" />
+    <Build Include="dbo\Stored Procedures\pro_sujectAdd.sql" />
+    <Build Include="dbo\Stored Procedures\pro_sujectDelete.sql" />
+    <Build Include="dbo\Stored Procedures\pro_sujectQuery.sql" />
+    <Build Include="dbo\Stored Procedures\pro_sujectUpdate.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReportCard.DataBase.publish.xml" />
