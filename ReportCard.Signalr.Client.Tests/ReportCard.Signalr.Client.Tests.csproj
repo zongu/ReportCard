@@ -73,6 +73,7 @@
     <Compile Include="Model\SecondProcess\SujectAddSecondProcessTests.cs" />
     <Compile Include="Model\SecondProcess\SujectDeleteSecondProcessTests.cs" />
     <Compile Include="Model\SecondProcess\SujectQuerySecondProcessTests.cs" />
+    <Compile Include="Model\SecondProcess\SujectUpdateSecondProcessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
