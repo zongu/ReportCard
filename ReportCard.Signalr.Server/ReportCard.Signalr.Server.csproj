@@ -109,7 +109,7 @@
     <Compile Include="ActionHandler\AddSujectActionHandler.cs" />
     <Compile Include="ActionHandler\DeleteScoreActionHandler.cs" />
     <Compile Include="ActionHandler\DeleteSujectActionHandler.cs" />
-    <Compile Include="ActionHandler\GetScoreActionHandler.cs" />
+    <Compile Include="ActionHandler\GetScoreSequenceActionHandler.cs" />
     <Compile Include="ActionHandler\GetSujectSequenceActionHandler.cs" />
     <Compile Include="ActionHandler\UpdateSujectActionHandler.cs" />
     <Compile Include="Applibs\AutofacConfig.cs" />

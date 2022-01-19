@@ -24,8 +24,6 @@ namespace ReportCard.Signalr.Client.ActionHandler
                 var action = JsonConvert.DeserializeObject<SujectAction>(actionModule.Message);
 
                 this.console.Write($"操作成功:{JsonConvert.SerializeObject(action.Suject)}");
-                this.console.Read();
-                this.console.Clear();
 
                 return true;
             }

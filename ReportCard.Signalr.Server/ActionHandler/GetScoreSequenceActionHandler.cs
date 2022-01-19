@@ -8,11 +8,11 @@ namespace ReportCard.Signalr.Server.ActionHandler
     using ReportCard.Domain.Repository;
     using ReportCard.Signalr.Server.Model;
 
-    public class GetScoreActionHandler : IActionHandler
+    public class GetScoreSequenceActionHandler : IActionHandler
     {
         private IScoreRepository repo;
 
-        public GetScoreActionHandler(IScoreRepository repo)
+        public GetScoreSequenceActionHandler(IScoreRepository repo)
         {
             this.repo = repo;
         }

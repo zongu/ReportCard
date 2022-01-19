@@ -26,7 +26,7 @@ namespace ReportCard.Signalr.Server.Tests.ActionHandler
                     f_point = (index + 1) * 10
                 })));
 
-            var handler = new GetScoreActionHandler(repo.Object);
+            var handler = new GetScoreSequenceActionHandler(repo.Object);
             var result = handler.ExecuteAction(new ActionModule()
             {
                 Message = new GetScoreSequenceAction()
