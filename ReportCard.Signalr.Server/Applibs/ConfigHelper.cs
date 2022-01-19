@@ -8,7 +8,7 @@ namespace ReportCard.Signalr.Server.Applibs
         public static string SignalrUrl
         {
             get
-                => $"http://*:8086";
+                => $"http://*:8085";
         }
 
         public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["ReportCard"].ConnectionString;

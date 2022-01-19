@@ -48,6 +48,9 @@
     <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.4.2.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
@@ -131,6 +134,10 @@
     <ProjectReference Include="..\ReportCard.Domain\ReportCard.Domain.csproj">
       <Project>{436E2536-D24B-47C2-B952-1141BAD42912}</Project>
       <Name>ReportCard.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportCard.Persistent\ReportCard.Persistent.csproj">
+      <Project>{99c885b5-971c-4241-a082-cb0ae1a904cc}</Project>
+      <Name>ReportCard.Persistent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
