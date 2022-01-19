@@ -84,6 +84,7 @@
     <Compile Include="Model\IActionHandler.cs" />
     <Compile Include="Model\SecondProcess\ScoreAddSecondProcess.cs" />
     <Compile Include="Model\SecondProcess\ScoreDeleteSecondProcess.cs" />
+    <Compile Include="Model\SecondProcess\ScoreQuerySecondProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Signalr\HubClient.cs" />

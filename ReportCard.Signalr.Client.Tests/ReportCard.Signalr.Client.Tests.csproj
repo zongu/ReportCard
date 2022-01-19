@@ -68,6 +68,7 @@
     <Compile Include="ActionHandler\ScoreActionHandlerTests.cs" />
     <Compile Include="Model\SecondProcess\ScoreAddSecondProcessTests.cs" />
     <Compile Include="Model\SecondProcess\ScoreDeleteSecondProcessTests.cs" />
+    <Compile Include="Model\SecondProcess\ScoreQuerySecondProcessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
