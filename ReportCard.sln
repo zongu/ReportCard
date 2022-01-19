@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Signalr.Server",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Signalr.Server.Tests", "ReportCard.Signalr.Server.Tests\ReportCard.Signalr.Server.Tests.csproj", "{C6DEA392-8F83-4084-A158-8902E8E91781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportCard.Signalr.Client", "ReportCard.Signalr.Client\ReportCard.Signalr.Client.csproj", "{35165149-02BC-408D-A31E-3D4C26A5643F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{C6DEA392-8F83-4084-A158-8902E8E91781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DEA392-8F83-4084-A158-8902E8E91781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DEA392-8F83-4084-A158-8902E8E91781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35165149-02BC-408D-A31E-3D4C26A5643F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35165149-02BC-408D-A31E-3D4C26A5643F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35165149-02BC-408D-A31E-3D4C26A5643F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35165149-02BC-408D-A31E-3D4C26A5643F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
