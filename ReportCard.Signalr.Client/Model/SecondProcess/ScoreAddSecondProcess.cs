@@ -77,6 +77,9 @@ namespace ReportCard.Signalr.Client.Model.SecondProcess
                     Point = point
                 });
 
+                this.console.WriteLine("SendAction AddScoreAction");
+                this.console.Read();
+
                 return true;
             }
             catch (Exception ex)
