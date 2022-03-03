@@ -73,6 +73,8 @@
     <Build Include="dbo\Stored Procedures\pro_sujectDelete.sql" />
     <Build Include="dbo\Stored Procedures\pro_sujectQuery.sql" />
     <Build Include="dbo\Stored Procedures\pro_sujectUpdate.sql" />
+    <Build Include="dbo\User Defined Types\type_score.sql" />
+    <Build Include="dbo\Stored Procedures\pro_scoreBatchInsert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReportCard.DataBase.publish.xml" />

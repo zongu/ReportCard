@@ -5,6 +5,7 @@ namespace ReportCard.Persistent.Tests.Repository
     using System.Linq;
     using Dapper;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ReportCard.Domain.Model;
     using ReportCard.Domain.Repository;
     using ReportCard.Persistent.Repository;
 
@@ -38,6 +39,20 @@ namespace ReportCard.Persistent.Tests.Repository
             Assert.AreEqual(addResult.score.f_id, 1);
             Assert.AreEqual(addResult.score.f_sujectId, 1);
             Assert.AreEqual(addResult.score.f_point, 80);
+        }
+
+        [TestMethod]
+        public void 批次新增分數測試()
+        {
+            var insertResult = this.repo.BatchInsert(Enumerable.Range(1, 5).Select(index => new Score()
+            {
+                f_sujectId = index,
+                f_point = index * 10
+            }));
+
+            Assert.IsNull(insertResult.exception);
+            Assert.IsNotNull(insertResult.scores);
+            Assert.AreEqual(insertResult.scores.Count(), 5);
         }
 
         [TestMethod]

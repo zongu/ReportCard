@@ -19,6 +19,13 @@ namespace ReportCard.Domain.Repository
         (Exception exception, Score score) Add(int sujectId, int point);
 
         /// <summary>
+        /// 批次新增分數
+        /// </summary>
+        /// <param name="scores"></param>
+        /// <returns></returns>
+        (Exception exception, IEnumerable<Score> scores) BatchInsert(IEnumerable<Score> scores);
+
+        /// <summary>
         /// 移除分數
         /// </summary>
         /// <param name="id"></param>
